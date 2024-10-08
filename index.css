@@ -1,0 +1,56 @@
+.navbar {
+  overflow: visible !important;
+}
+
+.navbar .dropdown-toggle {
+    color: white; 
+  }
+  
+  .navbar .dropdown-toggle:hover {
+    color: #ccc; 
+  }
+  
+  :root {
+    --offcanvas-width: 250px; 
+    --topNavbarHeight: 56px
+  }
+  
+  .offcanvas.sidebar-nav {
+    width: var(--offcanvas-width) !important;
+    max-width: none !important; 
+  }
+
+  .sidebar-link{
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-link .right-icon{
+    display: inline-flex;
+    transition:all ease 0.25s;
+  }
+
+  .sidebar-link[aria-expanded= "true"] .right-icon{
+    transform: rotate(180deg);
+  }
+
+  @media (min-width:992px) {
+
+    body{
+        overflow: auto;
+    }
+    .offcanvas-backdrop {
+        display: none !important; 
+      }
+
+      main{
+        margin-left: var(--offcanvas-width);
+      }
+      
+    .offcanvas.sidebar-nav{
+        transform: none;
+        visibility: visible !important;
+        top: var(--topNavbarHeight);
+        height: calc(100% - var(--topNavbarHeight));
+    }
+  }
